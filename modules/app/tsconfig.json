@@ -1,0 +1,5 @@
+{
+    "extends": "../../tsconfig.json",
+    "include": ["src", "../components/src/Button"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}
