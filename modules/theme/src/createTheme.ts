@@ -6,6 +6,13 @@ export function createTheme(theme?: Theme) {
   return deepmerge(defaultTheme, theme || {});
 }
 
+export function getCssVariablesFromTheme(theme: Theme){
+  Object.entries(theme).reduce(() => {
+
+  }, [])
+}
+
+
 export function injectTheme(theme: Theme) {
   let sheet = document.getElementById('css-theme');
 

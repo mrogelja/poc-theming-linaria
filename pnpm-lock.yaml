@@ -56,12 +56,10 @@ importers:
     specifiers:
       '@linaria/core': ^4.2.8
       '@poc/theme': workspace:^1.0.0
-      deepmerge: 4.3.1
       react: ^18.2.0
     dependencies:
       '@linaria/core': 4.2.8
       '@poc/theme': link:../theme
-      deepmerge: 4.3.1
     devDependencies:
       react: 18.2.0
 
