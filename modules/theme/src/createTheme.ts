@@ -6,13 +6,6 @@ export function createTheme(theme?: Theme) {
   return deepmerge(defaultTheme, theme || {});
 }
 
-export function getCssVariablesFromTheme(theme: Theme){
-  Object.entries(theme).reduce(() => {
-
-  }, [])
-}
-
-
 export function injectTheme(theme: Theme) {
   let sheet = document.getElementById('css-theme');
 
@@ -34,7 +27,9 @@ export function injectTheme(theme: Theme) {
       --text-color-secondary: ${theme.color.secondaryText};
 
       --font-size: ${theme.typography.fontSize};
+    }
 
+    html{
       font-size: var(--font-size);
       background-color: var(--background-color-0);
     }
