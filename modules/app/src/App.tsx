@@ -9,7 +9,7 @@ function App() {
   }, []);
 
   return (
-    <div className={styles.root}>
+    <div css={styles.root}>
       <Button>Bouton normal</Button>
       <Button disabled>Bouton désactivé</Button>
       <Button selected>Bouton sélectionné</Button>

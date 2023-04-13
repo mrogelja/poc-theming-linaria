@@ -14,11 +14,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./",
     "paths": {
-      "@poc/app": ["modules/app/src/index.ts"],
-      "@poc/theme": ["modules/theme/src/index.ts"],
-      "@poc/components": ["modules/components/src/index.ts"]
+      "@poc/app": ["./modules/app/src/index.ts"],
+      "@poc/theme": ["./modules/theme/src/index.ts"],
+      "@poc/components": ["./modules/components/src/index.ts"]
     }
   },
   "include": ["modules"]

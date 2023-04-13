@@ -13,7 +13,6 @@
     "lint:css": "stylelint src/**/*.tsx"
   },
   "dependencies": {
-    "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@poc/components": "workspace:^1.0.0",
     "@poc/theme": "workspace:^1.0.0",

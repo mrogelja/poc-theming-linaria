@@ -1,8 +1,7 @@
 import { css } from '@emotion/react';
 import { theme } from '@poc/theme';
-
 export const styles = {
-  root: css`
+    root: css `
     --button-font-size: var(${theme.typography.fontSize.name}, 14px);
     --button-border-radius: 2px;
     --button-background-color: var(${theme.color.primary.name}, #496b76);
@@ -23,17 +22,18 @@ export const styles = {
       color: var(--button-color-active);
     }
   `,
-  selected: css`
+    selected: css `
     --button-background-color: var(--button-background-color-active);
     --button-color: var(--button-color-active);
   `,
-  disabled: css`
+    disabled: css `
     --button-background-color: var(${theme.color.disabled.name}, #e4e4e4);
     --button-color: var(${theme.color.disabledText.name}, #cbcbcb);
     cursor: initial;
     pointer-events: none;
   `,
-  mini: css`
+    mini: css `
     --button-font-size: 12px;
   `,
 };
+//# sourceMappingURL=Button.styles.js.map

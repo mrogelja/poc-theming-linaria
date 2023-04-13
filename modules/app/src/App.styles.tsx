@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css } from '@emotion/react';
 import { theme } from '@poc/theme';
 
 export const styles = {

@@ -1,5 +1,4 @@
 import { styles } from './Button.styles';
-import { cx } from '@poc/theme';
 
 type ButtonSize = 'mini' | 'normal' | 'big';
 
@@ -21,12 +20,12 @@ export function Button({
   return (
     <button
       type="button"
-      className={cx(
+      css={[
         styles.root,
         disabled && styles.disabled,
         selected && styles.selected,
         size === 'mini' && styles.mini
-      )}
+      ]}
       disabled={disabled}
       style={style}
     >

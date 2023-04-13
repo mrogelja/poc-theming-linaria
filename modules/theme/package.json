@@ -2,7 +2,7 @@
   "name": "@poc/theme",
   "version": "1.0.0",
   "description": "",
-  "module": "src/index.js",
+  "main": "src/index.ts",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,13 +12,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "deepmerge": "4.3.1",
-    "@emotion/css": "^11.10.6"
+    "deepmerge": "4.3.1"
   },
   "devDependencies": {
     "react": "^18.2.0"
-  },
-  "peerDependencies": {
-    "@emotion/css": "^11.10.6"
   }
 }
