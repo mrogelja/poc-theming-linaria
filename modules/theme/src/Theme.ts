@@ -44,7 +44,7 @@ export const theme: Theme = {
     },
     primaryText: {
       name: "--color-primary-text",
-      value: "#000000"
+      value: "white"
     },
     active: {
       name: "--color-active",

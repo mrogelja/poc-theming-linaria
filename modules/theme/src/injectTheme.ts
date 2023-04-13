@@ -21,7 +21,12 @@ export function injectTheme(themeOverride?: Partial<Theme>) {
       ${theme.backgroundColor.z2.name}: ${theme.backgroundColor.z2.value};
       ${theme.color.primary.name}: ${theme.color.primary.value};
       ${theme.color.primaryText.name}: ${theme.color.primaryText.value};      
+      ${theme.color.active.name}: ${theme.color.active.value};
+      ${theme.color.activeText.name}: ${theme.color.activeText.value};      
+      ${theme.color.disabled.name}: ${theme.color.disabled.value};      
+      ${theme.color.disabledText.name}: ${theme.color.disabledText.value};       
     }
+
 
     html{
       font-size: var(${theme.typography.fontSize.name});

@@ -1,5 +1,8 @@
 {
     "extends": "../../tsconfig.json",
     "include": ["src", "../components/src/Button"],
-    "references": [{ "path": "./tsconfig.node.json" }]
+    "references": [{ "path": "./tsconfig.node.json" }],
+    "compilerOptions": {
+        "jsxImportSource": "@emotion/react"
+    }
 }

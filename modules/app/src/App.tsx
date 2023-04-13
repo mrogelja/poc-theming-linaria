@@ -16,7 +16,7 @@ function App() {
       <Button size="mini" selected>
         Petit bouton sélectionné
       </Button>
-      <Button style={{ '--font-size': '22px', '--background-color': 'red' } as React.CSSProperties}>
+      <Button style={{ '--button-font-size': '22px', '--button-background-color': 'red' } as React.CSSProperties}>
         Bouton custom
       </Button>
     </div>

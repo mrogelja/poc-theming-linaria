@@ -1,74 +1,39 @@
-import { css } from '@linaria/core';
+import { css } from '@emotion/css';
+import { theme } from '@poc/theme';
 
 export const styles = {
   root: css`
-    --font-size: var(--font-size, 14px);
-    --border-radius: 2px;
-    --background-color: #496b76;
-    --background-color-active: #7ea1ad;
-    --color: white;
+    --button-font-size: var(${theme.typography.fontSize.name}, 14px);
+    --button-border-radius: 2px;
+    --button-background-color: var(${theme.color.primary.name}, #496b76);
+    --button-background-color-active: var(${theme.color.active.name}, #7ea1ad);
+    --button-color: var(${theme.color.primaryText.name}, #FFFFF);
+    --button-color-active: var(${theme.color.activeText.name}, #FFFFF);
 
-    font-size: var(--font-size);
+    font-size: var(--button-font-size);
     border: 1px solid #e9e9e9;
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     padding: 0.6em 1.2em;
-    background-color: var(--background-color);
-    color: var(--color);
+    background-color: var(--button-background-color);
+    color: var(--button-color);
     cursor: pointer;
 
     &:active{
-      background-color: var(--background-color-active);
+      background-color: var(--button-background-color-active);
+      color: var(--button-color-active);
     }
   `,
   selected: css`
-    --background-color: #c5edfb;
-    --background-color-active: #93d4ea;
-    --color: #496b76;
+    --button-background-color: var(--button-background-color-active);
+    --button-color: var(--button-color-active);
   `,
   disabled: css`
-    --background-color: #e4e4e4;
-    --color: #cbcbcb;
+    --button-background-color: var(${theme.color.disabled.name}, #e4e4e4);
+    --button-color: var(${theme.color.disabledText.name}, #cbcbcb);
     cursor: initial;
     pointer-events: none;
   `,
   mini: css`
-   --font-size: 12px;
+    --button-font-size: 12px;
   `,
 };
-
-// export const styles = {
-//   root: css`
-//     --font-size: var(${theme.typography.fontSize.name}, 14px);
-//     --border-radius: 2px;
-//     --background-color: var(${theme.color.primary.name}, #496b76);
-//     --background-color-active: var(${theme.color.active.name}, #7ea1ad);
-//     --color: var(${theme.color.primaryText.name}, #FFFFF);
-//     --color-active: var(${theme.color.activeText.name}, #FFFFF);
-
-//     font-size: var(--font-size);
-//     border: 1px solid #e9e9e9;
-//     border-radius: var(--border-radius);
-//     padding: 0.6em 1.2em;
-//     background-color: var(--background-color);
-//     color: var(--color);
-//     cursor: pointer;
-
-//     &:active{
-//       background-color: var(--background-color-active);
-//       color: var(--color-active);
-//     }
-//   `,
-//   selected: css`
-//     --background-color: var(--background-color-active);
-//     --color: var(--color-active);
-//   `,
-//   disabled: css`
-//     --background-color: var(${theme.color.disabled.name}, #e4e4e4);
-//     --color: var(${theme.color.disabledText.name}, #cbcbcb);
-//     cursor: initial;
-//     pointer-events: none;
-//   `,
-//   mini: css`
-//     --font-size: 12px;
-//   `,
-// };
