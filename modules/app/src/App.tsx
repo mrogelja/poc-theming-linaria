@@ -1,11 +1,11 @@
-import { createTheme, injectTheme } from '@poc/theme';
+import { injectTheme } from '@poc/theme';
 import { Button } from '@poc/components';
 import { styles } from './App.styles';
 import { useEffect } from 'react';
 
 function App() {
   useEffect(() => {
-    injectTheme(createTheme());
+    injectTheme();
   }, []);
 
   return (
@@ -16,7 +16,7 @@ function App() {
       <Button size="mini" selected>
         Petit bouton sélectionné
       </Button>
-      <Button style={{ '--font-size': '22px', '--background-color': 'red' }}>
+      <Button style={{ '--font-size': '22px', '--background-color': 'red' } as React.CSSProperties}>
         Bouton custom
       </Button>
     </div>

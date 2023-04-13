@@ -5,7 +5,12 @@ import linaria from '@linaria/vite';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    linaria(),
+    linaria({
+      exclude: ["**/*.html", "**/node_modules/**"],
+      babelOptions: {
+        presets: ['@babel/preset-typescript', '@babel/preset-react'],
+      },
+    }),
     react()
   ],
 });

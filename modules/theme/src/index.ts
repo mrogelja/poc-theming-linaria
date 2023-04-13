@@ -1,4 +1,3 @@
-export { injectTheme } from './createTheme';
-export { createTheme } from './createTheme';
-export { defaultTheme } from './defaultTheme';
+export { theme } from './Theme';
+export { injectTheme } from './injectTheme';
 export { css, cx } from '@linaria/core';
