@@ -5,6 +5,7 @@
     "rootDir": "src/",
     "outDir": "lib/",
     "composite": true,
+    "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo",
     "skipLibCheck": true,
     "target": "ESNext",
     "module": "ESNext",

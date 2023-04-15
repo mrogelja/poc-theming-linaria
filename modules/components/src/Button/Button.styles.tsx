@@ -24,8 +24,10 @@ export const styles = {
     }
   `,
   selected: css`
-    --button-background-color: var(--button-background-color-active);
-    --button-color: var(--button-color-active);
+    &, &:active{
+      --button-background-color: var(--button-background-color-active);
+      --button-color: var(--button-color-active);
+    }
   `,
   disabled: css`
     --button-background-color: var(${theme.color.disabled.name}, #e4e4e4);

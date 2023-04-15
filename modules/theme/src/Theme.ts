@@ -1,9 +1,9 @@
-export interface CssVar<T = string>{
+interface CssVar<T = string>{
   value: T,
   name: string
 }
 
-export interface Theme {
+interface Theme {
   backgroundColor: {
     z0: CssVar;
     z1: CssVar;
@@ -48,7 +48,7 @@ export const theme: Theme = {
     },
     active: {
       name: "--color-active",
-      value: "#7ea1ad"
+      value: "#c5edfb"
     },
     activeText: {
       name: "--color-active-text",

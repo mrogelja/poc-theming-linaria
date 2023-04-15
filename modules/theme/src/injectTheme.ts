@@ -1,5 +1,5 @@
 import { Theme, theme as defaultTheme } from './Theme';
-import * as deepmerge from 'deepmerge';
+import deepmerge from 'deepmerge';
 
 export function injectTheme(themeOverride?: Partial<Theme>) {
   const theme = deepmerge(defaultTheme, themeOverride || {});
