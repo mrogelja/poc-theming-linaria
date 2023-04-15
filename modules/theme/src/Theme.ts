@@ -1,9 +1,9 @@
-interface CssVar<T = string>{
+export interface CssVar<T = string>{
   value: T,
   name: string
 }
 
-interface Theme {
+export interface Theme {
   backgroundColor: {
     z0: CssVar;
     z1: CssVar;
