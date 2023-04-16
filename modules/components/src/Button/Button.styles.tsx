@@ -1,10 +1,13 @@
-import { css } from '@emotion/react';
-import { theme } from '@poc/theme';
+import { css, Theme, CssVar} from '@poc/theme';
+
+export interface ButtonTheme extends Theme {
+  borderRadius: CssVar;
+}
 
 export const styles = {
-  root: css`
+  root: (theme: ButtonTheme) => css`
     --button-font-size: var(${theme.typography.fontSize.name}, 14px);
-    --button-border-radius: 2px;
+    --button-border-radius: ${theme.borderRadius?.asVar() || "2px"};
     --button-background-color: var(${theme.color.primary.name}, #496b76);
     --button-background-color-active: var(${theme.color.active.name}, #7ea1ad);
     --button-color: var(${theme.color.primaryText.name}, #FFFFF);
@@ -29,12 +32,14 @@ export const styles = {
       --button-color: var(--button-color-active);
     }
   `,
-  disabled: css`
+  disabled: (theme: ButtonTheme) => {
+    return css`
     --button-background-color: var(${theme.color.disabled.name}, #e4e4e4);
     --button-color: var(${theme.color.disabledText.name}, #cbcbcb);
     cursor: initial;
     pointer-events: none;
-  `,
+  `;
+  },
   mini: css`
     --button-font-size: 12px;
   `,

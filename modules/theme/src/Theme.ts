@@ -1,9 +1,22 @@
-export interface CssVar<T = string>{
-  value: T,
-  name: string
+import { Theme as EmotionTheme } from '@emotion/react'
+
+export class CssVar<T = string> {
+  constructor(public name: string, public value: T){}
+  
+  public asVar(defaultValue?: any) : string {
+    return defaultValue ? `var(${this.name}, ${defaultValue})` : `var(${this.name})`;
+  }
+
+  public asRule(): string {
+    return `${this.name} : ${this.value};`; 
+  }
+
+  public clone(value: T): CssVar<T> {
+    return new CssVar(this.name, value);
+  }
 }
 
-export interface Theme {
+export interface Theme extends EmotionTheme {
   backgroundColor: {
     z0: CssVar;
     z1: CssVar;
@@ -22,51 +35,4 @@ export interface Theme {
   };
 }
 
-export const theme: Theme = {
-  backgroundColor: {
-    z0: {
-      name: "--background-color-z0",
-      value: "#2C444C",
-    },
-    z1: {
-      name: "--background-color-z1",
-      value: "#243C44",
-    },
-    z2: {
-      name: "--background-color-z2",
-      value: "#1C343B"
-    }
-  },
-  color: {
-    primary: {
-      name: "--color-primary",
-      value: "#496b76"
-    },
-    primaryText: {
-      name: "--color-primary-text",
-      value: "white"
-    },
-    active: {
-      name: "--color-active",
-      value: "#c5edfb"
-    },
-    activeText: {
-      name: "--color-active-text",
-      value: "#496b76"
-    },
-    disabled: {
-      name: "--color-disabled",
-      value: "#e4e4e4"
-    },
-    disabledText: {
-      name: "--color-disabled-text",
-      value: "#cbcbcb"
-    },
-  },
-  typography: {
-    fontSize: {
-      value: 12,
-      name: "--font-size"
-    },
-  },
-};
+

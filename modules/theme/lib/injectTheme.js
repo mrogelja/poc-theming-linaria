@@ -1,17 +1,12 @@
-import { Theme } from './Theme';
-
-export function injectTheme(theme: Theme) {
-  let sheet = document.getElementById('css-theme');
-  
-  if (!sheet) {
-    sheet = document.createElement('style');
-    sheet.setAttribute('id', 'css-theme');
-    document.head.appendChild(sheet);
-  }
-
-
-  // TODO: Generate automatically the :root part
-  sheet.innerHTML = `
+export function injectTheme(theme) {
+    let sheet = document.getElementById('css-theme');
+    if (!sheet) {
+        sheet = document.createElement('style');
+        sheet.setAttribute('id', 'css-theme');
+        document.head.appendChild(sheet);
+    }
+    // TODO: Generate automatically the :root part
+    sheet.innerHTML = `
     :root{
       ${theme.typography.fontSize.asRule()}
       ${theme.backgroundColor.z0.asRule()}
@@ -32,3 +27,4 @@ export function injectTheme(theme: Theme) {
     }
   `;
 }
+//# sourceMappingURL=injectTheme.js.map

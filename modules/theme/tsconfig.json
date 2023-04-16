@@ -1,4 +1,26 @@
 {
-    "extends": "../../tsconfig.json",
-    "include": ["src"]
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": "src/",
+    "outDir": "lib/",
+    "composite": true,
+    "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo",
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "sourceMap": true,
+    "noEmit": false
+  },
+  "include": ["src/**/*.ts*"],
+  "exclude": [
+    "lib",
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx"
+  ]
 }

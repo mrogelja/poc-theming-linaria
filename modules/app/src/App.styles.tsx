@@ -1,12 +1,11 @@
-import { css } from '@emotion/react';
-import { theme } from '@poc/theme';
+import { css, Theme } from '@poc/theme';
 
 export const styles = {
-  root: css`
+  root: (theme: Theme) => css`
     width: 50rem;
     margin: 20rem auto;
     padding: 4rem;
-    background-color: var(${theme.backgroundColor.z1.name});
+    background-color: ${theme.backgroundColor.z1.asVar()};
     text-align: center;
     
     & > button{
