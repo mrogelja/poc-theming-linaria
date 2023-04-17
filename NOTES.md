@@ -11,7 +11,7 @@
 @emotion/react seul
 
 - (Normalement) possibilité de typechecker si utilisation de la version objet css({ ... }).
-- Possibilité d'utiliser un ThemeProvider pour dynamiser proprement la génération de CSS.
+- Possibilité d'utiliser un ThemeProvider pour dynamiser proprement la génération de CSS et typechecker la surcharge des composants
 
 ## Inconvénients:
 
@@ -25,4 +25,3 @@
 
 - Dans version @emotion/react, l'utilisation des propriétés css={} rajoute un niveau de spécialisation (plus dur de revenir en arrière si on veut revenir à du css natif)
 - Si typechecking si utilisation de la version objet css({ ... }), éloignement de l'écriture de CSS natif donc courbe d'apprentissage augmentée.
-- Si utilisation d'un ThemeProvider, utilisation d'un hook ou d'un HoC obligatoire pour retrouver le theme.

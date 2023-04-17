@@ -1,8 +1,12 @@
 {
-    "extends": "../../tsconfig.json",
-    "include": ["src", "../components/src/Button"],
-    "references": [{ "path": "./tsconfig.node.json" }],
-    "compilerOptions": {
-        "jsxImportSource": "@emotion/react"
-    }
+  "extends": "../../tsconfig.json",
+  "include": [
+    "src",
+    "../components/src/Button",
+    "../theme/src/themeToStyle.tsx"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    "jsxImportSource": "@emotion/react"
+  }
 }

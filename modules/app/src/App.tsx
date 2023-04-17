@@ -1,12 +1,25 @@
-import { CssVar, Theme, createTheme, injectTheme } from '@poc/theme';
+import { Theme, createTheme, injectTheme } from '@poc/theme';
 import { Button } from '@poc/components';
 import { styles } from './App.styles';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from "@emotion/react";
 
-function App() {
-  const [theme, setTheme] = useState<Theme>(createTheme());
+const defaultTheme: Theme = createTheme();
+const lightTheme: Theme   = createTheme({
+  backgroundColor: {
+    z0: defaultTheme.backgroundColor.z0.copy("red")
+  }
+});
 
+
+function App() {
+  const [themeLight, setThemeLight] = useState<boolean>(false);
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+
+  useEffect(() => {
+    setTheme(themeLight ? lightTheme : defaultTheme)
+  }, [themeLight]);
+  
   useEffect(() => {
     injectTheme(theme);
   }, [theme]);
@@ -14,6 +27,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div css={styles.root}>
+        <div css={styles.moveTheme}>
+          <a onClick={themeChangeHandler}>
+            {themeLight ? "Thème moche" : "Thème par défaut"}
+          </a>
+        </div>
         <Button>Bouton normal</Button>
         <Button disabled>Bouton désactivé</Button>
         <Button selected>Bouton sélectionné</Button>
@@ -22,33 +40,20 @@ function App() {
         </Button>
         <Button theme={{
           typography: {
-            fontSize: theme.typography.fontSize.clone(22)
+            fontSize: theme.typography.fontSize.copy(22)
           },
           color: {
-            primary: theme.color.primary.clone("red")
+            primary: theme.color.primary.copy("red")
           }
         }}>
           Bouton custom
-        </Button>
-
-        <Button onClick={themeChangeHandler}>
-          Changer de Thème !
         </Button>
       </div>
     </ThemeProvider>
   );
 
   function themeChangeHandler() {
-    let z0 = theme.backgroundColor.z0;
-    z0.value = "red";
-
-    let newTheme = createTheme({
-      backgroundColor: {
-        z0: theme.backgroundColor.z0.clone("red")
-      }
-    });
-
-    setTheme(newTheme)
+    setThemeLight(!themeLight);
   }
 }
 

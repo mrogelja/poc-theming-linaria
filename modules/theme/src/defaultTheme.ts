@@ -15,6 +15,6 @@ export const defaultTheme: Theme = {
     disabledText: new CssVar("--color-disabled-text", "#cbcbcb"),
   },
   typography: {
-    fontSize: new CssVar("--font-size", 12),
+    fontSize: new CssVar("--font-size", 16),
   },
 };

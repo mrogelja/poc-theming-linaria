@@ -1,3 +1,4 @@
+export { themeToStyle } from './themeToStyle';
 export { type Theme, CssVar } from './Theme';
 export { createTheme } from './createTheme';
 export { defaultTheme } from './defaultTheme';

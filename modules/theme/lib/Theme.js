@@ -5,11 +5,20 @@ export class CssVar {
         this.name = name;
         this.value = value;
     }
-    asVar() {
-        return `var(${this.name})`;
+    asVar(defaultValue) {
+        return defaultValue ? `var(${this.name}, ${defaultValue})` : `var(${this.name})`;
     }
     asRule() {
-        return `${this.name} : ${this.value};`;
+        return `${this.name} : ${this.toString()};`;
+    }
+    copy(value) {
+        return new CssVar(this.name, value || this.value);
+    }
+    toString() {
+        if (typeof this.value === "number") {
+            return `${this.value}px`;
+        }
+        return `${this.value}`;
     }
 }
 //# sourceMappingURL=Theme.js.map

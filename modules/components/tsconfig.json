@@ -16,7 +16,7 @@
     "sourceMap": true,
     "noEmit": false
   },
-  "include": ["src/**/*.ts*"],
+  "include": ["src/**/*.ts*", "../theme/src/themeToStyle.tsx"],
   "exclude": [
     "lib",
     "node_modules",

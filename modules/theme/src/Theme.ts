@@ -8,11 +8,19 @@ export class CssVar<T = string> {
   }
 
   public asRule(): string {
-    return `${this.name} : ${this.value};`; 
+    return `${this.name} : ${this.toString()};`; 
   }
 
-  public clone(value: T): CssVar<T> {
-    return new CssVar(this.name, value);
+  public copy(value?: T): CssVar<T> {
+    return new CssVar(this.name, value || this.value);
+  }
+
+  public toString(): string {
+    if (typeof this.value === "number") {
+      return `${this.value}px`;
+    }
+    
+    return `${this.value}`;
   }
 }
 

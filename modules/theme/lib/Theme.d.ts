@@ -3,8 +3,10 @@ export declare class CssVar<T = string> {
     name: string;
     value: T;
     constructor(name: string, value: T);
-    asVar(): string;
+    asVar(defaultValue?: any): string;
     asRule(): string;
+    copy(value?: T): CssVar<T>;
+    toString(): string;
 }
 export interface Theme extends EmotionTheme {
     backgroundColor: {

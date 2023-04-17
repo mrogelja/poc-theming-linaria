@@ -1,15 +1,19 @@
 import { MouseEvent } from "react";
 import { styles, ButtonTheme } from './Button.styles';
-import { CssVar, Theme } from "@poc/theme";
+import { themeToStyle } from "@poc/theme";
 
 type ButtonSize = 'mini' | 'normal' | 'big';
+
+type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K]
+}
 
 interface ButtonProps {
   size?: ButtonSize;
   selected?: boolean;
   disabled?: boolean;
   children?: React.ReactNode;
-  theme?: Partial<ButtonTheme>;
+  theme?: DeepPartial<ButtonTheme>;
   onClick?: Function
 }
 
@@ -23,10 +27,9 @@ export function Button({
   onClick
 }: ButtonProps): JSX.Element {
 
-  const style = convertThemeToStyle(theme);
-  
-  console.log(style);
+  const style = themeToStyle(theme);
 
+  style && console.log(style);
   return (
     <button
       type="button"
@@ -52,16 +55,4 @@ export function Button({
 }
 
 
-function convertThemeToStyle(theme?: Partial<ButtonTheme>, style : object = {}) : object{
-  if (theme) {
-    for (let prop of Object.values(theme)) {
-      if (typeof prop === "object") {
-        return convertThemeToStyle(prop as Partial<ButtonTheme>, style);
-      } else if (prop instanceof CssVar) {
-        style[prop.name] = prop.value;
-      }
-    }
-  }
-  return style;
-}
 
