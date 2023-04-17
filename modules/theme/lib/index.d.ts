@@ -4,3 +4,4 @@ export { createTheme } from './createTheme';
 export { defaultTheme } from './defaultTheme';
 export { injectTheme } from './injectTheme';
 export { css, ThemeProvider, useTheme } from "@emotion/react";
+export { type DeepPartial } from './DeepPartial';

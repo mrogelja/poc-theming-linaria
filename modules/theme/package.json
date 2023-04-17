@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
+  "main": "lib/index.js",
   "module": "src/index.ts",
   "keywords": [],
   "author": "",
@@ -11,11 +12,14 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@types/lodash": "^4.14.194",
+    "react": "^18.2.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "react": "^18.2.0"
+    "@types/lodash": "^4.14.194",
+    "@emotion/react": "^11.10.6"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.10.6"
   }
 }

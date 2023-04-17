@@ -1,11 +1,6 @@
-import { Theme, CssVar} from '@poc/theme';
 import { css } from "@emotion/react";
-export interface ButtonTheme extends Theme {
-  borderRadius: CssVar;
-}
-
 export const styles = {
-  root: (theme: ButtonTheme) => css`
+    root: (theme) => css `
     --button-font-size: ${theme.typography.fontSize.asVar('14px')};
     --button-background-color:  ${theme.color.primary.asVar("#496b76")};
     --button-background-color-active: ${theme.color.active.asVar("#7ea1ad")};
@@ -26,21 +21,22 @@ export const styles = {
       color: var(--button-color-active);
     }
   `,
-  selected: css`
+    selected: css `
     &, &:active{
       --button-background-color: var(--button-background-color-active);
       --button-color: var(--button-color-active);
     }
   `,
-  disabled: (theme: ButtonTheme) => {
-    return css`
+    disabled: (theme) => {
+        return css `
     --button-background-color: var(${theme.color.disabled.name}, #e4e4e4);
     --button-color: var(${theme.color.disabledText.name}, #cbcbcb);
     cursor: initial;
     pointer-events: none;
   `;
-  },
-  mini: css`
+    },
+    mini: css `
     --button-font-size: 12px;
   `,
 };
+//# sourceMappingURL=Button.styles.js.map

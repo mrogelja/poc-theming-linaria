@@ -14,7 +14,7 @@ export const defaultTheme = {
         disabledText: new CssVar("--color-disabled-text", "#cbcbcb"),
     },
     typography: {
-        fontSize: new CssVar("--font-size", 12),
+        fontSize: new CssVar("--font-size", 16),
     },
 };
 //# sourceMappingURL=defaultTheme.js.map

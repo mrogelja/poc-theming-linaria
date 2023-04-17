@@ -1,12 +1,8 @@
 import { MouseEvent } from "react";
 import { styles, ButtonTheme } from './Button.styles';
-import { themeToStyle } from "@poc/theme";
+import { themeToStyle, DeepPartial } from "@poc/theme";
 
 type ButtonSize = 'mini' | 'normal' | 'big';
-
-type DeepPartial<T> = {
-  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K]
-}
 
 interface ButtonProps {
   size?: ButtonSize;
@@ -29,7 +25,6 @@ export function Button({
 
   const style = themeToStyle(theme);
 
-  style && console.log(style);
   return (
     <button
       type="button"

@@ -42,5 +42,3 @@ export interface Theme extends EmotionTheme {
     fontSize: CssVar<number>;
   };
 }
-
-

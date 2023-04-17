@@ -1,7 +1,8 @@
 import { CSSProperties } from "react";
 import { CssVar, Theme } from "./Theme";
+import { DeepPartial } from "./DeepPartial";
 
-export function themeToStyle(theme?: Partial<Theme>, style: CSSProperties = {}): CSSProperties {
+export function themeToStyle(theme?: DeepPartial<Theme>, style: CSSProperties = {}): CSSProperties {
   if (theme) {
     for (let prop of Object.values(theme)) {
       if (prop instanceof CssVar) {
@@ -9,7 +10,7 @@ export function themeToStyle(theme?: Partial<Theme>, style: CSSProperties = {}):
         // @ts-ignore
         style[cssProperty] = prop.toString();
       } else if (typeof prop === "object") {
-        style = themeToStyle(prop as Partial<Theme>, style);
+        style = themeToStyle(prop as DeepPartial<Theme>, style);
       }
     }
   }
