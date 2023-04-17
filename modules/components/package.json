@@ -2,21 +2,21 @@
   "name": "@poc/components",
   "version": "1.0.0",
   "description": "",
-  "module": "src/index.js",
+  "type": "module",
+  "main": "lib/index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc"
   },
   "dependencies": {
+    "react": "^18.2.0",
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@poc/theme": "workspace:^1.0.0"
   },
   "devDependencies": {
-    "react": "^18.2.0"
+    "typescript": "^5.0.2"
   }
 }

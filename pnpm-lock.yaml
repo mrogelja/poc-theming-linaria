@@ -54,23 +54,27 @@ importers:
       '@emotion/react': ^11.10.6
       '@poc/theme': workspace:^1.0.0
       react: ^18.2.0
+      typescript: ^5.0.2
     dependencies:
       '@emotion/css': 11.10.6
       '@emotion/react': 11.10.6_react@18.2.0
       '@poc/theme': link:../theme
-    devDependencies:
       react: 18.2.0
+    devDependencies:
+      typescript: 5.0.2
 
   modules/theme:
     specifiers:
       '@emotion/css': ^11.10.6
       deepmerge: 4.3.1
       react: ^18.2.0
+      typescript: ^5.0.2
     dependencies:
       '@emotion/css': 11.10.6
       deepmerge: 4.3.1
     devDependencies:
       react: 18.2.0
+      typescript: 5.0.2
 
 packages:
 
